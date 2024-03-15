@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+
+  client:
+    build: ./client
+    command:
+      - -c
+      - "while true; do curl -m 0.2 -sS web:8080; sleep 0.3; done"
